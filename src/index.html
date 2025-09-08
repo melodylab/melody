@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Melody</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+<style>
+  /* --- CSS CRÍTICO DEL SPLASH --- */
+  :root { --melody-bg:#D9BFA3; } /* marrón oscuro tipo Caín */
+
+  #splash{
+    position:fixed; inset:0;
+    background:var(--melody-bg);
+    display:flex; align-items:center; justify-content:center;
+    z-index:9999;
+    transition:opacity .5s ease, visibility .5s ease;
+  }
+  #splash img{
+    display:block;
+    width:min(12vw, 140px); /* <= ~1/8 de pantalla en desktop */
+    aspect-ratio:1/1; object-fit:contain;
+    animation: splashIn .9s ease both;
+    filter: drop-shadow(0 0 0 rgba(0,0,0,0)); /* evita blurry */
+  }
+  /* un poco más grande en móviles para que se vea bien */
+  @media (max-width: 768px){
+    #splash img{ width: 18vw; max-width: 120px; }
+  }
+  /* animación de entrada */
+  @keyframes splashIn{
+    from{ opacity:0; transform:scale(.9); }
+    to{   opacity:1; transform:scale(1); }
+  }
+  /* clase de salida */
+  .splash-hide{ opacity:0; visibility:hidden; }
+</style>
+
+</head>
+<body>
+   <!-- SPLASH Melody -->
+  <div id="splash">
+    <img src="assets/images/logo.png" alt="Melody" />
+  </div>
+  <app-root></app-root>
+</body>
+</html>

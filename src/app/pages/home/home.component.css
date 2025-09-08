@@ -1,0 +1,58 @@
+@keyframes bounceOnce {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-8px); }
+  60% { transform: translateY(4px); }
+}
+
+.bounce-once {
+  animation: bounceOnce 0.6s ease-in-out;
+}
+
+
+
+/* Micro interacciones */
+.card-tilt {
+  transform: perspective(900px) rotateX(var(--rx, 0)) rotateY(var(--ry, 0))
+             translateZ(var(--tz, 0));
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  will-change: transform;
+}
+
+/* Borde glow sutil al pasar */
+.card-tilt:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.18), 0 0 0 1px rgba(255,255,255,0.04) inset;
+}
+
+/* Gradiente discreto para títulos destacados */
+.text-gradient {
+  background: linear-gradient(90deg, #f97316 0%, #a855f7 50%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Carrusel horizontal tipo “case studies” con scroll-snap */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+.snap-child {
+  scroll-snap-align: start;
+}
+
+/* Rayas editoriales (inspiración Medium) */
+.lede {
+  max-width: 68ch;
+}
+
+/* Botón primario consistente */
+.btn-primary {
+  @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium
+         bg-black text-white hover:bg-neutral-800 active:scale-[0.99]
+         transition;
+}
+
+/* Botón secundario */
+.btn-secondary {
+  @apply inline-flex items-center gap-2 rounded-xl px-5 py-3 font-medium
+         border border-neutral-300/60 hover:bg-neutral-50 transition;
+}

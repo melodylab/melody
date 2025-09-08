@@ -1,0 +1,78 @@
+<header class="fixed inset-x-0 top-0 z-[999] bg-[#D9BFA3] border-b border-black/10 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="h-16 flex items-center justify-between">
+      <a routerLink="/" class="flex items-center gap-3">
+        <img src="assets/images/logo.png" alt="Melody" class="h-12 w-auto" />
+        <span class="text-xl font-semibold tracking-tight text-black">Melody</span>
+      </a>
+
+      <!-- Botón hamburguesa / X -->
+      <button
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-xl bg-black/10 hover:bg-black/15 transition"
+        (click)="toggle()"
+        [attr.aria-expanded]="open"
+        aria-controls="mobile-menu"
+        aria-label="Toggle menú"
+      >
+        <svg class="h-6 w-6 text-black" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path *ngIf="!open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          <path *ngIf="open" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Menú desktop -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="text-black font-semibold"
+           class="text-lg text-neutral-800 hover:text-black transition">Home</a>
+
+        <a routerLink="/services" routerLinkActive="text-black font-semibold"
+           class="group text-lg text-neutral-800 hover:text-black transition flex items-center gap-1">
+          Services
+          <svg class="h-4 w-4 opacity-60 group-hover:opacity-100" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5.5 7l4.5 4.5L14.5 7"/>
+          </svg>
+        </a>
+
+        <a routerLink="/about" routerLinkActive="text-black font-semibold"
+           class="text-lg text-neutral-800 hover:text-black transition">About</a>
+
+        <a routerLink="/contact" routerLinkActive="text-black font-semibold"
+           class="text-lg text-neutral-800 hover:text-black transition">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Overlay: oscurece y cierra al click (sin blur) -->
+  <div
+    *ngIf="open"
+    class="fixed inset-x-0 top-16 bottom-0 z-[950] md:hidden bg-black/40"
+    (click)="close()">
+  </div>
+
+  <!-- Menú móvil flotante (sólido) -->
+  <div
+    id="mobile-menu"
+    *ngIf="open"
+    class="fixed md:hidden top-16 inset-x-0 z-[960] px-4"
+    role="dialog" aria-modal="true"
+  >
+    <div class="rounded-2xl border border-black/10 bg-[#e3cdb8] shadow-2xl ring-1 ring-black/5">
+      <nav class="flex flex-col divide-y divide-black/5 py-2">
+        <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="text-black font-semibold"
+           (click)="close()"
+           class="px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 rounded-t-2xl transition">Home</a>
+        <a routerLink="/services" routerLinkActive="text-black font-semibold"
+           (click)="close()"
+           class="px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 transition">Services</a>
+        <a routerLink="/about" routerLinkActive="text-black font-semibold"
+           (click)="close()"
+           class="px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 transition">About</a>
+        <a routerLink="/contact" routerLinkActive="text-black font-semibold"
+           (click)="close()"
+           class="px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 rounded-b-2xl transition">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>

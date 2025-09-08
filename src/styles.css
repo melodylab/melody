@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#splash img{
+  animation:
+    splashIn .9s ease both,
+    pulse 2.2s ease-in-out .9s infinite;
+}
+@keyframes pulse{
+  0%,100%{ transform:scale(1); filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+  50%    { transform:scale(1.04); }
+}
+/* styles.css o global.css */
+.headline span {
+  display: inline-block;
+}
+
+.headline .primary { color: #2E7D7A; }   /* teal */
+.headline .accent  { color: #E87D3E; }   /* naranja */
+.headline .neutral { color: #4B2E2B; }   /* café oscuro */
+
+/* Bloquear scroll cuando el menú está abierto */
+html.menu-open,
+html.menu-open body {
+  overflow: hidden;
+}
+
+/* BLUR solo al contenido principal (debajo del header) */
+html.menu-open #app-content {
+  filter: blur(6px);
+  transition: filter 160ms ease;
+  pointer-events: none; /* evita clics detrás del overlay */
+}
+
+/* Asegura que header y panel móvil NO se blureen */
+html.menu-open header,
+html.menu-open #mobile-menu,
+html.menu-open .ignore-blur {
+  filter: none !important;
+}
