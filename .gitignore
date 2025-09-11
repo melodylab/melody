@@ -70,5 +70,5 @@ Thumbs.db
 
 # Utilitarios Locales / cache
 prueba.html
-deploy.sh
+deploy.bat
 *.exe
