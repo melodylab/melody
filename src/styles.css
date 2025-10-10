@@ -39,3 +39,19 @@ html.menu-open #mobile-menu,
 html.menu-open .ignore-blur {
   filter: none !important;
 }
+:root {
+  --bg-color: #f9f5f1; /* beige claro */
+  --text-color: #1c1917; /* café oscuro */
+}
+
+.dark {
+  --bg-color: #1c1917; /* fondo oscuro */
+  --text-color: #f9f5f1; /* texto claro */
+}
+
+/* Aplica los tokens */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}

@@ -52,271 +52,80 @@
   </div>
 </section>
 
-
-
-
-
-<!-- HERO — editorial/limpio tipo Medium -->
 <section class="relative">
-  <div class="mx-auto max-w-7xl p-8 grid lg:grid-cols-2 gap-10">
+  <div class="mx-auto max-w-7xl p-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
-    <!-- ===== LADO IZQUIERDO: SOLO TEXTO DINÁMICO ===== -->
+    <!-- ===== LADO IZQUIERDO ===== -->
     <div class="flex flex-col justify-center">
       <p class="text-sm tracking-wide text-neutral-500 uppercase">AI Company · Melody</p>
 
-      <h1 class="mt-2 text-4xl/tight md:text-5xl/tight font-semibold headline">
-        {{ copy.title }}
-      </h1>
-      <p class="lede mt-5 text-[#4B2E2B]/80">{{ copy.lede }}</p>
+      <!-- ✅ cambia dinámicamente según la tarjeta -->
+      <ng-container [ngSwitch]="selected">
+        <ng-container *ngSwitchCase="0">
+          <h1 class="mt-2 text-4xl/tight md:text-5xl/tight font-semibold">Fábrica de software</h1>
+          <p class="lede mt-5 text-[#4B2E2B]/80">Construimos apps y plataformas que crecen contigo: web, móvil e internos.</p>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="1">
+          <h1 class="mt-2 text-4xl/tight md:text-5xl/tight font-semibold">Chatbot Básico</h1>
+          <p class="lede mt-5 text-[#4B2E2B]/80">Implementa un chatbot sencillo para atención rápida y preguntas frecuentes.</p>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="2">
+          <h1 class="mt-2 text-4xl/tight md:text-5xl/tight font-semibold">Chatbot Avanzado</h1>
+          <p class="lede mt-5 text-[#4B2E2B]/80">Un chatbot con IA para conversaciones naturales y análisis de interacciones.</p>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="3">
+          <h1 class="mt-2 text-4xl/tight md:text-5xl/tight font-semibold">Desarrollo Personalizado</h1>
+          <p class="lede mt-5 text-[#4B2E2B]/80">Creamos software a medida para optimizar tus procesos y escalar tu negocio.</p>
+        </ng-container>
+      </ng-container>
+
+      <div
+        *ngIf="showTip"
+
+        class="fixed bottom-6 right-6 max-w-xs bg-white shadow-lg rounded-xl border p-4 z-50 flex items-start gap-3"
+      >
+        <span class="text-2xl">💡</span>
+        <div class="flex-1">
+          <p class="text-sm text-neutral-700">
+            Haz click en una tarjeta para ver más detalles.
+          </p>
+        </div>
+        <button
+          class="ml-2 text-neutral-400 hover:text-black"
+          (click)="closeTip()"
+        >
+          ✖
+        </button>
+      </div>
+
 
       <div class="mt-7 flex flex-wrap gap-3">
-        <a [routerLink]="copy.link" class="btn-primary">{{ copy.cta }}</a>
+        <a routerLink="/services" class="btn-primary">Ver servicios</a>
         <a routerLink="/services#integration" class="btn-secondary">Saber más</a>
       </div>
+    </div>
 
-      <div class="mt-6 flex flex-wrap gap-3 text-xs text-neutral-500">
-        <span class="px-2.5 py-1 rounded-full border" *ngIf="scene==='factory'">Integraciones</span>
-        <span class="px-2.5 py-1 rounded-full border" *ngIf="scene==='factory'">APIs</span>
-        <span class="px-2.5 py-1 rounded-full border" *ngIf="scene==='factory'">Escalabilidad</span>
-
-        <span class="px-2.5 py-1 rounded-full border" *ngIf="scene==='ai'">Chatbots</span>
-        <span class="px-2.5 py-1 rounded-full border" *ngIf="scene==='ai'">Automatización</span>
-        <span class="px-2.5 py-1 rounded-full border" *ngIf="scene==='ai'">Insights</span>
+    <!-- ===== LADO DERECHO: TARJETAS ===== -->
+    <div #cardsSection class="relative grid grid-cols-2 gap-4">
+      <div
+        *ngFor="let card of cards; let i = index"
+        #bounceBtn
+        class="relative aspect-square rounded-2xl overflow-hidden shadow group cursor-pointer card-tilt"
+        (mousemove)="onCardMove($event, i)"
+        (mouseleave)="onCardLeave($event, i)"
+        (click)="expand(i)"
+      >
+        <img
+          [src]="card.src"
+          [alt]="card.alt"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
     </div>
 
-    <!-- ===== LADO DERECHO: TOGGLE + ÚNICO VISOR 3D ===== -->
-    <div class="relative">
-      <!-- Toggle fuera y encima del contenedor (derecha) -->
-      <div class="absolute -top-6 right-2 z-20">
-        <div class="inline-flex rounded-full border bg-white/90 backdrop-blur p-1 shadow">
-          <button
-            class="px-3 py-1 text-xs md:text-sm rounded-full transition"
-            [class.bg-neutral-900]="scene==='factory'"
-            [class.text-white]="scene==='factory'"
-            (click)="setScene('factory')">
-            Fábrica
-          </button>
-          <button
-            class="px-3 py-1 text-xs md:text-sm rounded-full transition"
-            [class.bg-neutral-900]="scene==='ai'"
-            [class.text-white]="scene==='ai'"
-            (click)="setScene('ai')">
-            Productos IA
-          </button>
-        </div>
-      </div>
 
-      <!-- ÚNICO contenedor 3D -->
-      <div class="rounded-3xl border border-neutral-200/70 bg-white/60 backdrop-blur p-3 md:p-4 relative overflow-hidden">
-        <div class="aspect-[4/3] rounded-2xl overflow-hidden relative bg-transparent">
-
-          <!-- 3D o Fallback -->
-          <ng-container *ngIf="can3D; else fallback3d">
-            <div *ngIf="!loaded" class="absolute inset-0 animate-pulse bg-neutral-200/40"></div>
-            <iframe
-              [src]="safeUrl"
-              title="Escena 3D - Melody"
-              class="w-full h-full border-0"
-              loading="lazy"
-              allow="autoplay; fullscreen; xr-spatial-tracking"
-              allowfullscreen
-              (load)="loaded = true">
-            </iframe>
-          </ng-container>
-
-          <ng-template #fallback3d>
-            <img
-              [src]="scene==='factory' ? 'assets/images/dev1.png' : 'assets/images/chatbot1.png'"
-              [alt]="scene==='factory' ? 'Fábrica de software' : 'Productos con IA'"
-              class="w-full h-full object-cover">
-          </ng-template>
-
-          <!-- CTA dinámico dentro del visor -->
-          <div class="absolute bottom-2 left-2">
-            <a
-              [routerLink]="scene==='factory' ? '/services' : '/products'"
-              class="px-3 py-1 text-xs rounded-md bg-white/80 backdrop-blur border hover:bg-white">
-              {{ scene==='factory' ? 'Ver servicios' : 'Ver productos' }}
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Badge inferior -->
-      <div class="absolute -bottom-6 -right-6 bg-white/60 backdrop-blur rounded-xl border px-4 py-3 shadow-sm">
-        <p class="text-sm">Tiempo medio de implementación</p>
-        <p class="text-xl font-semibold">2–6 semanas</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- SUBPRODUCTOS — cards con tilt ligero -->
-<section class="py-14 lg:py-20 bg-neutral-50/60">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex items-end justify-between gap-4">
-      <h2 class="text-2xl md:text-3xl font-semibold">Qué construimos</h2>
-      <a
-        routerLink="/services"
-        class="text-sm text-neutral-600 hover:text-black"
-        >Ver todos →</a
-      >
-    </div>
-
-    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Chatbot -->
-      <article
-        class="group relative rounded-2xl border bg-white p-6 card-tilt"
-        (mousemove)="onCardMove($event, 0)"
-        (mouseleave)="onCardLeave($event, 0)"
-      >
-        <div
-          class="h-28 rounded-xl bg-gradient-to-tr from-emerald-200 to-emerald-50 mb-5"
-        ></div>
-        <h3 class="text-lg font-semibold">Chatbot Conversacional</h3>
-        <p class="mt-2 text-sm text-neutral-600">
-          Atención 24/7, captura de leads, integración con WhatsApp/Web, y
-          handoff humano cuando se necesita.
-        </p>
-        <div class="mt-4 flex items-center gap-2 text-xs text-neutral-500">
-          <span class="px-2 py-1 rounded-full border">NLU</span>
-          <span class="px-2 py-1 rounded-full border">Analytics</span>
-          <span class="px-2 py-1 rounded-full border">WhatsApp</span>
-        </div>
-        <a
-          routerLink="/contact"
-          class="mt-5 inline-block text-sm font-medium underline underline-offset-4"
-          >Solicitar demo</a
-        >
-      </article>
-
-      <!-- Desarrollo a medida -->
-      <article
-        class="group relative rounded-2xl border bg-white p-6 card-tilt"
-        (mousemove)="onCardMove($event, 1)"
-        (mouseleave)="onCardLeave($event, 1)"
-      >
-        <div
-          class="h-28 rounded-xl bg-gradient-to-tr from-orange-200 to-orange-50 mb-5"
-        ></div>
-        <h3 class="text-lg font-semibold">Desarrollo & Integraciones</h3>
-        <p class="mt-2 text-sm text-neutral-600">
-          Apps web/móviles, microservicios, y BFFs. Integraciones con CRMs, ERPs
-          y pasarelas de pago.
-        </p>
-        <div class="mt-4 flex items-center gap-2 text-xs text-neutral-500">
-          <span class="px-2 py-1 rounded-full border">Angular</span>
-          <span class="px-2 py-1 rounded-full border">.NET / Kotlin</span>
-          <span class="px-2 py-1 rounded-full border">AWS/GCP</span>
-        </div>
-        <a
-          routerLink="/services"
-          class="mt-5 inline-block text-sm font-medium underline underline-offset-4"
-          >Ver capacidades</a
-        >
-      </article>
-
-      <!-- Data & IA -->
-      <article
-        class="group relative rounded-2xl border bg-white p-6 card-tilt"
-        (mousemove)="onCardMove($event, 2)"
-        (mouseleave)="onCardLeave($event, 2)"
-      >
-        <div
-          class="h-28 rounded-xl bg-gradient-to-tr from-fuchsia-200 to-fuchsia-50 mb-5"
-        ></div>
-        <h3 class="text-lg font-semibold">Automatización con IA</h3>
-        <p class="mt-2 text-sm text-neutral-600">
-          RAG, clasificación, extracción de datos y pipelines de ML listos para
-          producción.
-        </p>
-        <div class="mt-4 flex items-center gap-2 text-xs text-neutral-500">
-          <span class="px-2 py-1 rounded-full border">RAG</span>
-          <span class="px-2 py-1 rounded-full border">ETL</span>
-          <span class="px-2 py-1 rounded-full border">Observabilidad</span>
-        </div>
-        <a
-          routerLink="/about"
-          class="mt-5 inline-block text-sm font-medium underline underline-offset-4"
-          >Cómo trabajamos</a
-        >
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- “OUR WORK” — carrusel horizontal scroll-snap (inspiración portafolios) -->
-<section class="py-14 lg:py-20">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex items-end justify-between gap-4">
-      <h2 class="text-2xl md:text-3xl font-semibold">Casos & demos</h2>
-      <div class="text-sm text-neutral-600">Desliza →</div>
-    </div>
-
-    <div class="mt-6 overflow-x-auto snap-x flex gap-6 pb-4">
-      <a
-        class="snap-child min-w-[280px] sm:min-w-[360px] lg:min-w-[420px] rounded-2xl overflow-hidden border bg-white hover:shadow-md transition"
-        routerLink="/our-work"
-      >
-        <div
-          class="h-48 bg-black/90 grid place-items-center text-white text-xl"
-        >
-          Demo Chatbot
-        </div>
-        <div class="p-4">
-          <p class="font-medium">Soporte y ventas 24/7</p>
-          <p class="text-sm text-neutral-600">WhatsApp + Web Widget</p>
-        </div>
-      </a>
-
-      <a
-        class="snap-child min-w-[280px] sm:min-w-[360px] lg:min-w-[420px] rounded-2xl overflow-hidden border bg-white hover:shadow-md transition"
-        routerLink="/our-work"
-      >
-        <div
-          class="h-48 bg-neutral-900 grid place-items-center text-white text-xl"
-        >
-          E‑commerce + IA
-        </div>
-        <div class="p-4">
-          <p class="font-medium">Buscador semántico</p>
-          <p class="text-sm text-neutral-600">RAG sobre catálogo</p>
-        </div>
-      </a>
-
-      <a
-        class="snap-child min-w-[280px] sm:min-w-[360px] lg:min-w-[420px] rounded-2xl overflow-hidden border bg-white hover:shadow-md transition"
-        routerLink="/our-work"
-      >
-        <div
-          class="h-48 bg-neutral-900 grid place-items-center text-white text-xl"
-        >
-          Automatización
-        </div>
-        <div class="p-4">
-          <p class="font-medium">Backoffice sin fricción</p>
-          <p class="text-sm text-neutral-600">Extracción de PDFs</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA final -->
-<section class="py-14">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div
-      class="rounded-3xl border bg-gradient-to-r from-neutral-50 to-white p-8 md:p-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6"
-    >
-      <div>
-        <h3 class="text-2xl font-semibold">Hablemos de tu caso</h3>
-        <p class="mt-2 text-neutral-600 max-w-xl">
-          Te proponemos un roadmap claro y entregables rápidos. Sin humo.
-        </p>
-      </div>
-      <a routerLink="/contact" class="btn-primary">Agendar una llamada</a>
-    </div>
   </div>
 </section>

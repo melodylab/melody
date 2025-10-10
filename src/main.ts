@@ -1,23 +1,35 @@
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
-import { ApplicationRef, enableProdMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { filter, take } from 'rxjs/operators';
+import { AppComponent } from './app/app.component';
+import { appConfig } from './app/app.config';
+import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { LucideAngularModule, Linkedin, Github, Mail,Sun, Moon } from 'lucide-angular';
+import { provideRouter } from '@angular/router';
 
-//splash control
-bootstrapApplication(AppComponent)
+// 🚀 Bootstrap principal
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter([]),
+    importProvidersFrom(
+      LucideAngularModule.pick({
+        // Íconos globales que usará Melody
+        Linkedin,
+        Github,
+        Mail,
+        Sun,
+        Moon,
+      })
+    ),
+    ...appConfig.providers!, // Mantiene tu configuración base
+  ],
+})
   .then(() => {
+    // 🎬 Control del splash
     const splash = document.getElementById('splash');
     if (splash) {
-      // espera 3000 ms (3s) antes de ocultar
       setTimeout(() => {
         splash.classList.add('splash-hide');
-        setTimeout(() => splash.remove(), 300); // remueve tras animación
+        setTimeout(() => splash.remove(), 300);
       }, 1500);
     }
   })
-  .catch(err => console.error(err));
-
-
-bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));

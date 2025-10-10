@@ -1,5 +1,47 @@
-<footer class="border-t border-neutral-200 text-sm text-neutral-600">
-  <div class="max-w-6xl mx-auto px-4 py-6">
-    © Melody 2025 - Todos los derechos reservados
+<section class="bg-[#F5E6D3] text-center py-20">
+  <h2 class="text-3xl font-bold text-[#3B2E2A] mb-4">
+    ¿Listo para construir algo inteligente?
+  </h2>
+  <p class="text-[#3B2E2A]/80 mb-8">
+    Conecta tus ideas con la tecnología. Hagamos realidad tu próximo proyecto.
+  </p>
+  <button
+    routerLink="/contact"
+    class="bg-[#3B2E2A] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#5A4339] transition"
+  >
+    Contáctanos
+  </button>
+</section>
+<footer class="bg-[#2E2420] text-white px-8 py-12">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+
+    <!-- Logo + Nombre -->
+    <div class="flex items-center gap-3">
+      <img src="assets/images/logo.png" alt="Melody" class="w-8 h-8">
+      <h3 class="text-lg font-semibold tracking-wide">Melody</h3>
+    </div>
+
+    <!-- Mensaje de propósito -->
+    <p class="text-center md:text-left text-white/70 max-w-md leading-relaxed">
+      Creamos soluciones inteligentes con IA y software a medida.<br>
+      Tecnología con propósito.
+    </p>
+
+    <!-- Redes sociales -->
+    <div class="flex gap-5">
+      <a href="https://www.linkedin.com/company/melody-ai/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center justify-center text-white hover:text-amber-400 transition">
+        <lucide-icon name="linkedin" class="w-5 h-5 cursor-pointer"></lucide-icon>
+      </a>
+      <lucide-icon name="mail" class="w-5 h-5 hover:text-amber-400 cursor-pointer transition"></lucide-icon>
+    </div>
+
+  </div>
+
+  <!-- Línea inferior -->
+  <div class="border-t border-white/10 mt-8 pt-4 text-center text-xs text-white/50">
+    © 2025 Melody · Software inteligente para un mundo conectado.
   </div>
 </footer>
