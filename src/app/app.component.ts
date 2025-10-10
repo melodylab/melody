@@ -1,8 +1,5 @@
-import { Component, signal } from '@angular/core';
-import {} from '@core/services'
-
-import { RouterOutlet } from '@angular/router';
-
+import { Component, OnInit,signal } from '@angular/core';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +7,11 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  protected readonly title = signal('melody');
+export class AppComponent implements OnInit {
+
+
+  ngOnInit() {
+
+  }
+
 }
