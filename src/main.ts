@@ -2,7 +2,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
 import { enableProdMode, importProvidersFrom } from '@angular/core';
-import { LucideAngularModule, Linkedin, Github, Mail,Sun, Moon,Heart } from 'lucide-angular';
+import { LucideAngularModule, Linkedin, Github, Mail,Sun, Moon,Heart,Sparkles, Users, CheckCircle } from 'lucide-angular';
 import { provideRouter } from '@angular/router';
 
 // 🚀 Bootstrap principal
@@ -18,6 +18,9 @@ bootstrapApplication(AppComponent, {
         Sun,
         Moon,
         Heart,
+        Sparkles,
+        Users,
+        CheckCircle,
       })
     ),
     ...appConfig.providers!, // Mantiene tu configuración base
