@@ -22,7 +22,8 @@ import {
   TrendingUp,
   Clock,
   ShieldCheck,
-  Brain
+  Brain,
+  ArrowLeft,
 } from 'lucide-angular';
 import { provideRouter } from '@angular/router';
 
@@ -52,6 +53,7 @@ bootstrapApplication(AppComponent, {
         Clock,
         ShieldCheck,
         Brain,
+        ArrowLeft,
       })
     ),
     ...appConfig.providers!, // Mantiene tu configuración base

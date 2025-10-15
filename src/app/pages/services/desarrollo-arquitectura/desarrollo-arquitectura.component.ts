@@ -28,6 +28,6 @@ export class DesarrolloArquitecturaComponent implements AfterViewInit {
       });
 
       logos[current].classList.add('active');
-    }, 2000); // cambia cada 3 segundos
+    }, 1500); // cambia cada 3 segundos
   }
 }
