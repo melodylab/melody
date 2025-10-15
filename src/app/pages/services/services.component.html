@@ -1,1 +1,55 @@
-<p>services works!</p>
+<section class="min-h-screen bg-[#E8D3B0] flex flex-col justify-center items-center px-6 py-16">
+  <div class="max-w-6xl w-full text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-[#3B2F2F] mb-4">
+      Nuestros Servicios
+    </h1>
+    <p class="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+      Desarrollamos soluciones tecnológicas que combinan ingeniería, automatización y estrategia
+      para impulsar el crecimiento de tu empresa.
+    </p>
+
+    <!-- GRID DE CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+      <!-- 1. Desarrollo y Arquitectura -->
+      <a routerLink="/services/desarrollo-arquitectura"
+         class="group bg-[#F9EEDC] hover:bg-[#FAEBD7] rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+        <lucide-icon name="server-cog" class="w-10 h-10 text-[#6F4E37] mb-4 group-hover:scale-110 transition-transform"></lucide-icon>
+        <h2 class="text-2xl font-semibold text-[#3B2F2F] mb-2">Desarrollo y Arquitectura</h2>
+        <p class="text-gray-600">
+          Creamos software robusto, seguro y escalable para los desafíos empresariales modernos.
+        </p>
+      </a>
+
+      <!-- 2. Automatización y Conectividad -->
+      <a routerLink="/services/automatizacion-conectividad"
+         class="group bg-[#F9EEDC] hover:bg-[#FAEBD7] rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+        <lucide-icon name="workflow" class="w-10 h-10 text-[#6F4E37] mb-4 group-hover:scale-110 transition-transform"></lucide-icon>
+        <h2 class="text-2xl font-semibold text-[#3B2F2F] mb-2">Automatización y Conectividad Empresarial</h2>
+        <p class="text-gray-600">
+          Conectamos tus sistemas y automatizamos procesos para mejorar la eficiencia de tu negocio.
+        </p>
+      </a>
+
+      <!-- 3. Consultoría Estratégica y Migración -->
+      <a routerLink="/services/consultoria-migracion"
+         class="group bg-[#F9EEDC] hover:bg-[#FAEBD7] rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+        <lucide-icon name="line-chart" class="w-10 h-10 text-[#6F4E37] mb-4 group-hover:scale-110 transition-transform"></lucide-icon>
+        <h2 class="text-2xl font-semibold text-[#3B2F2F] mb-2">Consultoría Estratégica y Migración Tecnológica</h2>
+        <p class="text-gray-600">
+          Analizamos y guiamos la transformación tecnológica de tu empresa con una visión técnica y escalable.
+        </p>
+      </a>
+
+      <!-- 4. Extensión de Equipo Melody -->
+      <a routerLink="/services/extension-equipo"
+         class="group bg-[#F9EEDC] hover:bg-[#FAEBD7] rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+        <lucide-icon name="users" class="w-10 h-10 text-[#6F4E37] mb-4 group-hover:scale-110 transition-transform"></lucide-icon>
+        <h2 class="text-2xl font-semibold text-[#3B2F2F] mb-2">Extensión de Equipo Melody</h2>
+        <p class="text-gray-600">
+          Nos integramos a tu equipo técnico para impulsar proyectos sin aumentar tu carga operativa.
+        </p>
+      </a>
+    </div>
+  </div>
+</section>

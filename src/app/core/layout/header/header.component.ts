@@ -16,6 +16,26 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private sub!: Subscription;
   isDarkMode = false;
   constructor(private router: Router) {}
+  isServicesOpen = false;
+
+  toggleServices() {
+    this.isServicesOpen = !this.isServicesOpen;
+  }
+
+  closeDropdown() {
+    this.isServicesOpen = false;
+  }
+
+// Se cierra si el usuario hace clic fuera del menú
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (!target.closest('.relative')) {
+      this.isServicesOpen = false;
+    }
+  }
+
+
 
   ngOnInit(): void {
     this.sub = this.router.events.subscribe((e: Event) => {

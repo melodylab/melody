@@ -1,1 +1,167 @@
-<p>desarrollo-arquitectura works!</p>
+<section class="min-h-screen bg-[#E8D3B0] text-[#3B2F2F] flex flex-col">
+  <!-- Volver -->
+  <div class="max-w-6xl mx-auto w-full px-6 pt-6">
+    <a
+      routerLink="/services"
+      class="text-lg font-medium hover:text-black transition flex items-center gap-2"
+    >
+      <lucide-icon name="arrow-left" class="w-5 h-5"></lucide-icon>
+      Volver a Servicios
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-20 items-center"
+  >
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Arquitectura y desarrollo<br />
+        con propósito inteligente
+      </h1>
+      <p class="text-lg text-[#4A3B35]">
+        En Melody no solo desarrollamos software: diseñamos cimientos tecnológicos sólidos,
+        escalables y pensados para evolucionar con la inteligencia artificial.
+        Creamos soluciones que rinden hoy y aprenden mañana.
+      </p>
+
+      <a
+        routerLink="/contact"
+        class="inline-block bg-[#3B2F2F] text-[#F9EEDC] px-8 py-3 rounded-lg hover:bg-[#5A4234] transition font-semibold shadow-lg"
+      >
+        Agenda una reunión
+      </a>
+    </div>
+
+    <!-- Carrusel diagonal -->
+    <div class="carousel-diagonal">
+      <img src="assets/images/angular.png" class="logo active" alt="Angular" />
+      <img src="assets/images/springboot.png" class="logo" alt="Spring Boot" />
+      <img src="assets/images/kotlin.png" class="logo" alt="Kotlin" />
+      <img src="assets/images/.net.png" class="logo" alt=".NET" />
+      <img src="assets/images/docker.png" class="logo" alt="Docker" />
+      <img src="assets/images/firebase.png" class="logo" alt="Firebase" />
+      <img src="assets/images/azure.png" class="logo" alt="Azure" />
+      <img src="assets/images/blazor.png" class="logo" alt="Blazor" />
+    </div>
+  </div>
+
+  <!-- CÓMO CONSTRUIMOS -->
+  <section class="bg-[#F9EEDC] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        Cómo construimos software inteligente
+      </h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35]">
+        Nuestro proceso combina precisión técnica con visión estratégica.
+        Diseñamos soluciones que integran arquitectura limpia, rendimiento constante
+        y una estructura pensada para crecer con tu negocio.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="layers" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Arquitectura limpia</h3>
+          <p class="text-gray-700">
+            Diseñamos estructuras modulares y escalables que facilitan mantenimiento
+            y crecimiento sostenido del sistema.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="cpu" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Desarrollo orientado</h3>
+          <p class="text-gray-700">
+            Aplicamos principios de ingeniería, pruebas automatizadas y pipelines
+            inteligentes para entregas más ágiles y confiables.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="network" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Conectividad total</h3>
+          <p class="text-gray-700">
+            Diseñamos ecosistemas de APIs y microservicios preparados para integraciones
+            empresariales y despliegues continuos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENFOQUE TECNOLÓGICO -->
+  <section class="bg-[#E8D3B0] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        Nuestro ADN tecnológico
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Backend</h3>
+          <p class="text-gray-700 text-sm">C#, .NET, Node.js, Spring Boot, Django</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Frontend</h3>
+          <p class="text-gray-700 text-sm">Angular, Blazor, Kotlin Multiplatform</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Infraestructura</h3>
+          <p class="text-gray-700 text-sm">Docker, Azure, Firebase, CI/CD</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Integración</h3>
+          <p class="text-gray-700 text-sm">Microservicios, APIs, Webhooks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="bg-[#F9EEDC] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Resultados que perduran</h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35]">
+        Lo que construimos hoy sienta las bases para el futuro. Cada línea de código,
+        cada despliegue y cada decisión técnica está pensada para que tu negocio crezca con estabilidad.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="trending-up" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Escalabilidad sin fricción</h3>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="clock" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Despliegues más rápidos</h3>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="shield-check" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Integración asegurada</h3>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="brain" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Base sólida para IA</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section
+    class="bg-gradient-to-br from-[#6F4E37] to-[#3B2F2F] py-24 text-center text-[#F9EEDC] px-6"
+  >
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      Diseñemos algo que trascienda
+    </h2>
+    <p class="max-w-2xl mx-auto mb-8 text-lg">
+      En Melody, la arquitectura no es solo código.
+      Es el inicio de la inteligencia que impulsa tu negocio.
+    </p>
+    <a
+      routerLink="/contact"
+      class="inline-block bg-[#F9EEDC] text-[#3B2F2F] px-8 py-3 rounded-lg hover:bg-[#E8D3B0] font-semibold shadow-md transition"
+    >
+      Contáctanos
+    </a>
+  </section>
+</section>

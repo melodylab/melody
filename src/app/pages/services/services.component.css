@@ -1,0 +1,14 @@
+section {
+  scroll-behavior: smooth;
+}
+
+a:hover h2 {
+  color: #6F4E37;
+}
+.dropdown-menu {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0);
+}

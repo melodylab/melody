@@ -26,13 +26,57 @@
            routerLinkActive="text-black font-semibold"
            class="text-lg text-neutral-800 hover:text-black transition">Home</a>
 
-        <a routerLink="/services" routerLinkActive="text-black font-semibold"
-           class="group text-lg text-neutral-800 hover:text-black transition flex items-center gap-1">
-          Services
-          <svg class="h-4 w-4 opacity-60 group-hover:opacity-100" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M5.5 7l4.5 4.5L14.5 7"/>
-          </svg>
-        </a>
+        <div class="relative group">
+          <!-- Link principal -->
+          <a
+            routerLink="/services"
+            routerLinkActive="text-black font-semibold"
+            class="group text-lg text-neutral-800 hover:text-black transition flex items-center gap-1 cursor-pointer"
+          >
+            Services
+            <svg
+              class="h-4 w-4 opacity-60 group-hover:opacity-100 transition-transform duration-200"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path d="M5 7l5 5 5-5H5z" />
+            </svg>
+          </a>
+
+          <!-- Dropdown -->
+          <ul
+            class="absolute left-0 mt-2 w-64 bg-[#E8D3B0] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20"
+          >
+            <li>
+              <a
+                routerLink="/services/desarrollo-arquitectura"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] rounded-t-xl text-neutral-800 transition"
+              >Desarrollo y Arquitectura</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/services/automatizacion-conectividad"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] text-neutral-800 transition"
+              >Automatización y Conectividad</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/services/consultoria-migracion"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] text-neutral-800 transition"
+              >Consultoría y Migración</a
+              >
+            </li>
+            <li>
+              <a
+                routerLink="/services/extension-equipo"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] rounded-b-xl text-neutral-800 transition"
+              >Extensión de Equipo Melody</a
+              >
+            </li>
+          </ul>
+        </div>
 
         <a routerLink="/about" routerLinkActive="text-black font-semibold"
            class="text-lg text-neutral-800 hover:text-black transition">About</a>
@@ -65,9 +109,77 @@
            routerLinkActive="text-black font-semibold"
            (click)="close()"
            class="px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 rounded-t-2xl transition">Home</a>
-        <a routerLink="/services" routerLinkActive="text-black font-semibold"
-           (click)="close()"
-           class="px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 transition">Services</a>
+        <!-- Services con dropdown -->
+        <div class="relative select-none">
+          <a
+            routerLink="/services"
+            routerLinkActive="font-semibold text-black"
+            [routerLinkActiveOptions]="{ exact: false }"
+            (click)="toggleServices()"
+            class="flex items-center gap-1 justify-between w-full px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 transition cursor-pointer"
+          >
+    <span class="flex items-center gap-1">
+      Services
+
+      <svg
+        [class.rotate-180]="isServicesOpen"
+        class="h-4 w-4 opacity-70 transition-transform duration-200"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path d="M5 7l5 5 5-5H5z" />
+      </svg>
+    </span>
+          </a>
+
+          <!-- Dropdown -->
+          <ul
+            *ngIf="isServicesOpen"
+            class="absolute left-0 top-full mt-1 w-64 bg-[#E8D3B0] rounded-xl shadow-lg border border-[#D9BFA3] flex flex-col gap-1 py-2 z-50 animate-fade-slide"
+          >
+            <li>
+              <a
+                routerLink="/services/desarrollo-arquitectura"
+                routerLinkActive="font-semibold text-black"
+                (click)="closeDropdown()"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] rounded-t-xl text-neutral-800 transition"
+              >
+                Desarrollo y Arquitectura
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/services/automatizacion-conectividad"
+                routerLinkActive="font-semibold text-black"
+                (click)="closeDropdown()"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] text-neutral-800 transition"
+              >
+                Automatización y Conectividad
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/services/consultoria-migracion"
+                routerLinkActive="font-semibold text-black"
+                (click)="closeDropdown()"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] text-neutral-800 transition"
+              >
+                Consultoría y Migración
+              </a>
+            </li>
+            <li>
+              <a
+                routerLink="/services/extension-equipo"
+                routerLinkActive="font-semibold text-black"
+                (click)="closeDropdown()"
+                class="block px-4 py-2 hover:bg-[#D9BFA3] rounded-b-xl text-neutral-800 transition"
+              >
+                Extensión de Equipo Melody
+              </a>
+            </li>
+          </ul>
+        </div>
+
         <a routerLink="/about" routerLinkActive="text-black font-semibold"
            (click)="close()"
            class="px-4 py-3 text-lg text-neutral-900 hover:bg-black/5 transition">About</a>
