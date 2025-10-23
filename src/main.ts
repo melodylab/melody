@@ -24,6 +24,10 @@ import {
   ShieldCheck,
   Brain,
   ArrowLeft,
+  Bot,
+  CpuIcon,
+  Target,
+  ChartLine,
 } from 'lucide-angular';
 import { provideRouter } from '@angular/router';
 
@@ -54,6 +58,10 @@ bootstrapApplication(AppComponent, {
         ShieldCheck,
         Brain,
         ArrowLeft,
+        Bot,
+        CpuIcon,
+        Target,
+        ChartLine,
       })
     ),
     ...appConfig.providers!, // Mantiene tu configuración base

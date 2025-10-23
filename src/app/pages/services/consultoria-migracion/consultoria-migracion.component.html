@@ -1,1 +1,110 @@
-<p>consultoria-migracion works!</p>
+<section class="min-h-screen bg-[#E8D3B0] text-[#3B2F2F] flex flex-col">
+  <!-- Volver -->
+  <div class="max-w-6xl mx-auto w-full px-6 pt-6">
+    <a
+      routerLink="/services"
+      class="text-lg font-medium hover:text-black transition flex items-center gap-2"
+    >
+      <lucide-icon name="arrow-left" class="w-5 h-5"></lucide-icon>
+      Volver a Servicios
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-20 items-center">
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Consultoría y migración<br />
+        para una evolución tecnológica segura
+      </h1>
+      <p class="text-lg text-[#4A3B35] text-justify">
+        En Melody acompañamos a las empresas en su transición hacia entornos modernos y escalables.
+        Evaluamos tu infraestructura, optimizamos recursos y migramos sistemas sin interrumpir tus operaciones.
+        Tecnología más sólida, ágil y preparada para el futuro.
+      </p>
+
+      <a
+        routerLink="/contact"
+        class="inline-block bg-[#3B2F2F] text-[#F9EEDC] px-8 py-3 rounded-lg hover:bg-[#5A4234] transition font-semibold shadow-lg"
+      >
+        Agenda tu diagnóstico gratuito
+      </a>
+    </div>
+
+    <!-- Carrusel diagonal -->
+    <div class="carousel-diagonal">
+      <img src="assets/images/consultoria.png" class="logo active" alt="Consultoría Melody" />
+      <img src="assets/images/migracion.png" class="logo" alt="Migración Melody" />
+      <img src="assets/images/docker.png" class="logo" alt="Docker" />
+      <img src="assets/images/azure.png" class="logo" alt="Azure" />
+      <img src="assets/images/planificacion.png" class="logo" alt="Planificacion" />
+    </div>
+  </div>
+
+  <!-- CONSULTORÍA ESTRATÉGICA -->
+  <section class="bg-[#F9EEDC] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Consultoría estratégica y tecnológica</h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35] text-justify">
+        Analizamos tus procesos, sistemas y estructura tecnológica para crear una estrategia de modernización
+        alineada con tus objetivos empresariales. Convertimos la complejidad técnica en decisiones claras y medibles.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="target" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Evaluación técnica</h3>
+          <p class="text-gray-700">
+            Diagnóstico completo de tus sistemas actuales y definición de oportunidades de mejora y optimización.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="chart-line" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Plan de modernización</h3>
+          <p class="text-gray-700">
+            Diseñamos un roadmap técnico y estratégico para migrar sin riesgos y con una visión clara de resultados.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="users" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Acompañamiento continuo</h3>
+          <p class="text-gray-700">
+            Nuestro equipo te guía en cada etapa del proceso, asegurando la adopción completa de la nueva tecnología.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIGRACIÓN SIN INTERRUPCIONES -->
+  <section class="bg-[#E8D3B0] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Migraciones sin interrupciones</h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35] text-justify">
+        Migramos tus sistemas, bases de datos y aplicaciones con precisión. Nuestra prioridad es que tu negocio siga funcionando
+        mientras evolucionas hacia plataformas más seguras, rápidas y escalables.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Bases de datos</h3>
+          <p class="text-gray-700 text-sm">SQL Server, PostgreSQL, MongoDB</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Aplicaciones legacy</h3>
+          <p class="text-gray-700 text-sm">Migración a microservicios, APIs, cloud o PaaS</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Entornos cloud</h3>
+          <p class="text-gray-700 text-sm">Azure, AWS, Firebase, GCP</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Automatización CI/CD</h3>
+          <p class="text-gray-700 text-sm">Pipelines, contenedores y despliegues ágiles</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

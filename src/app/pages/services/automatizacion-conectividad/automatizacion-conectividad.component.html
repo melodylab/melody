@@ -1,1 +1,145 @@
-<p>automatizacion-conectividad works!</p>
+<section class="min-h-screen bg-[#E8D3B0] text-[#3B2F2F] flex flex-col">
+  <!-- Volver -->
+  <div class="max-w-6xl mx-auto w-full px-6 pt-6">
+    <a
+      routerLink="/services"
+      class="text-lg font-medium hover:text-black transition flex items-center gap-2"
+    >
+      <lucide-icon name="arrow-left" class="w-5 h-5"></lucide-icon>
+      Volver a Servicios
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-20 items-center"
+  >
+    <!-- Texto -->
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Automatización y conectividad<br />
+        que impulsan la evolución digital
+      </h1>
+      <p class="text-lg text-[#4A3B35] text-justify">
+        En Melody transformamos la manera en que operas. Diseñamos sistemas que automatizan tareas,
+        conectan datos y permiten que tu empresa funcione con inteligencia propia.
+      </p>
+
+      <a
+        routerLink="/contact"
+        class="inline-block bg-[#3B2F2F] text-[#F9EEDC] px-8 py-3 rounded-lg hover:bg-[#5A4234] transition font-semibold shadow-lg"
+      >
+        Descubre cómo optimizar tu negocio
+      </a>
+    </div>
+
+    <!-- Carrusel diagonal -->
+    <div class="carousel-diagonal">
+      <img src="assets/images/n8n.png" class="logo active" alt="n8n" />
+      <img src="assets/images/zapier.png" class="logo" alt="Zapier" />
+      <img src="assets/images/api.png" class="logo" alt="API" />
+      <img src="assets/images/GraphQL.png" class="logo" alt="GraphQL" />
+    </div>
+  </div>
+
+  <!-- PROCESOS INTELIGENTES -->
+  <section class="bg-[#F9EEDC] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        Flujos que piensan, sistemas que aprenden
+      </h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35] text-justify">
+        La automatización no solo elimina tareas repetitivas: transforma la manera en que trabajas.
+        En Melody desarrollamos flujos inteligentes que aprenden de tus procesos y se adaptan a las necesidades de tu empresa.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="workflow" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Automatización inteligente</h3>
+          <p class="text-gray-700">
+            Diseñamos flujos de trabajo que ejecutan acciones automáticas, detectan errores y optimizan tiempos en segundo plano.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="bot" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Bots y RPA</h3>
+          <p class="text-gray-700">
+            Implementamos bots y procesos robóticos que operan 24/7, reduciendo la carga manual y aumentando la precisión.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="cpu" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Decisiones automáticas</h3>
+          <p class="text-gray-700">
+            Aplicamos IA para identificar patrones y automatizar respuestas estratégicas en tus operaciones diarias.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSISTEMAS CONECTADOS -->
+  <section class="bg-[#E8D3B0] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        Ecosistemas conectados sin fricción
+      </h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35] text-justify">
+        Conectamos tus herramientas, sistemas y plataformas en una red que se comunica de forma automática.
+        Desde CRMs hasta IoT, todo fluye en tiempo real para que tu negocio no se detenga.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Integraciones API</h3>
+          <p class="text-gray-700 text-sm">REST, GraphQL, Webhooks, WebSockets</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Automatización Cloud</h3>
+          <p class="text-gray-700 text-sm">n8n, Zapier, Power Automate</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Infraestructura</h3>
+          <p class="text-gray-700 text-sm">Docker, Azure, Firebase, CI/CD</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Conectividad IoT</h3>
+          <p class="text-gray-700 text-sm">MQTT, Pub/Sub, sensores y dispositivos conectados</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="bg-[#F9EEDC] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">Resultados que transforman</h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35] text-justify">
+        Cuando cada sistema se comunica y cada proceso se automatiza, el resultado es simple:
+        más productividad, menos errores y decisiones más inteligentes.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="clock" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Ahorro de tiempo operativo</h3>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="trending-up" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Procesos más eficientes</h3>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="shield-check" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Integraciones seguras</h3>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="brain" class="w-8 h-8 text-[#6F4E37] mb-3 mx-auto"></lucide-icon>
+          <h3 class="font-semibold">Ecosistema inteligente</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
