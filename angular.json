@@ -37,7 +37,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "baseHref": "/"
+            "baseHref": "/",
+            "server": false
           },
           "configurations": {
             "production": {
