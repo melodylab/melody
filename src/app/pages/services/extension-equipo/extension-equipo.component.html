@@ -1,1 +1,115 @@
-<p>extension-equipo works!</p>
+<section class="min-h-screen bg-[#E8D3B0] text-[#3B2F2F] flex flex-col">
+  <!-- Volver -->
+  <div class="max-w-6xl mx-auto w-full px-6 pt-6">
+    <a
+      routerLink="/services"
+      class="text-lg font-medium hover:text-black transition flex items-center gap-2"
+    >
+      <lucide-icon name="arrow-left" class="w-5 h-5"></lucide-icon>
+      Volver a Servicios
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-20 items-center"
+  >
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Extensión de equipo<br />
+        talento que se integra contigo
+      </h1>
+      <p class="text-lg text-[#4A3B35] text-justify">
+        En Melody creemos que las mejores soluciones nacen del trabajo conjunto.
+        Nuestros especialistas se integran como parte de tu equipo, compartiendo
+        conocimiento, metodologías y visión estratégica para alcanzar resultados
+        medibles y sostenibles.
+      </p>
+
+      <a
+        routerLink="/contact"
+        class="inline-block bg-[#3B2F2F] text-[#F9EEDC] px-8 py-3 rounded-lg hover:bg-[#5A4234] transition font-semibold shadow-lg"
+      >
+        Colabora con nosotros
+      </a>
+    </div>
+
+    <!-- Carrusel diagonal -->
+    <div class="carousel-diagonal">
+      <img src="assets/images/equipo.png" class="logo active" alt="Equipo" />
+      <img src="assets/images/comunicacion.png" class="logo" alt="Comunicación" />
+      <img src="assets/images/integracion.png" class="logo" alt="Integración" />
+      <img src="assets/images/github.png" class="logo" alt="GitHub" />
+      <img src="assets/images/notion.png" class="logo" alt="Notion" />
+      <img src="assets/images/slack.png" class="logo" alt="Slack" />
+    </div>
+  </div>
+
+  <!-- COLABORACIÓN INTELIGENTE -->
+  <section class="bg-[#F9EEDC] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        Colaboración que impulsa resultados
+      </h2>
+      <p class="text-lg max-w-3xl mx-auto mb-16 text-[#4A3B35] text-justify">
+        Nos convertimos en una extensión natural de tu organización, aportando talento técnico
+        y visión estratégica sin romper tu flujo operativo. Combinamos metodologías ágiles,
+        comunicación transparente y compromiso real con tus objetivos.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="users" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Equipo dedicado</h3>
+          <p class="text-gray-700">
+            Asignamos profesionales que se adaptan a tu cultura y procesos, garantizando continuidad y confianza.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="handshake" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Colaboración ágil</h3>
+          <p class="text-gray-700">
+            Trabajamos bajo marcos ágiles como Scrum o Kanban, fomentando la comunicación constante y entregas rápidas.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:shadow-md transition">
+          <lucide-icon name="target" class="w-10 h-10 text-[#6F4E37] mb-4 mx-auto"></lucide-icon>
+          <h3 class="font-semibold text-xl mb-2">Enfoque en resultados</h3>
+          <p class="text-gray-700">
+            Medimos el éxito en base al impacto que generamos en tus métricas y objetivos empresariales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍAS Y HERRAMIENTAS -->
+  <section class="bg-[#E8D3B0] py-20 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        Herramientas que potencian la colaboración
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Gestión de proyectos</h3>
+          <p class="text-gray-700 text-sm">Jira, Asana, Trello</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Comunicación</h3>
+          <p class="text-gray-700 text-sm">Slack, Teams, Discord</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Desarrollo</h3>
+          <p class="text-gray-700 text-sm">GitHub, GitLab, Bitbucket</p>
+        </div>
+        <div class="p-6 bg-white/60 rounded-2xl shadow hover:-translate-y-2 transition">
+          <h3 class="font-semibold text-xl mb-3">Documentación</h3>
+          <p class="text-gray-700 text-sm">Notion, Confluence, ClickUp</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>

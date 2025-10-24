@@ -1,1 +1,188 @@
-<p>contact works!</p>
+<section class="min-h-screen bg-[#E8D3B0] text-[#3B2F2F] flex flex-col">
+  <!-- HERO -->
+  <div
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-20 items-center"
+  >
+    <div class="space-y-6">
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        Hablemos de tu próxima gran idea
+      </h1>
+      <p class="text-lg text-[#4A3B35] text-justify">
+        En <strong>Melody</strong> transformamos tus desafíos en soluciones inteligentes.
+        Si tienes un proyecto en mente, estás a un clic de hacerlo realidad.
+        Nuestro equipo responderá rápido, te asesorará sin compromiso y
+        te guiará hacia la mejor estrategia tecnológica para tu negocio.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a
+          href="https://wa.me/593999999999"
+          target="_blank"
+          class="flex items-center justify-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-green-700 transition"
+        >
+          <lucide-icon name="message-circle" class="w-5 h-5"></lucide-icon>
+          Escríbenos por WhatsApp
+        </a>
+
+        <a
+          href="mailto:contacto@melody.ec"
+          class="flex items-center justify-center gap-2 bg-[#3B2F2F] text-[#F9EEDC] px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-[#5A4234] transition"
+        >
+          <lucide-icon name="mail" class="w-5 h-5"></lucide-icon>
+          Envíanos un correo
+        </a>
+      </div>
+    </div>
+
+    <!-- Carrusel diagonal -->
+    <div class="carousel-diagonal">
+      <img src="assets/images/mensaje.png" class="logo active" alt="Mensaje" />
+      <img src="assets/images/conexion.png" class="logo" alt="Conexión" />
+      <img src="assets/images/soporte.png" class="logo" alt="Soporte" />
+    </div>
+  </div>
+
+  <!-- FORMULARIO + BENEFICIOS -->
+  <section class="bg-[#F9EEDC] py-20 px-6">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- FORMULARIO -->
+      <div>
+        <h2 class="text-3xl font-bold mb-6 text-center lg:text-left">
+          Cuéntanos sobre tu proyecto
+        </h2>
+        <form
+          class="bg-white/70 p-8 rounded-2xl shadow-lg grid grid-cols-1 gap-6 text-left"
+        >
+          <input
+            type="text"
+            placeholder="Tu nombre"
+            class="w-full p-3 rounded-lg border border-[#D2B48C] focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
+          />
+
+          <input
+            type="email"
+            placeholder="tu@empresa.com"
+            class="w-full p-3 rounded-lg border border-[#D2B48C] focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
+          />
+
+          <input
+            type="text"
+            placeholder="Nombre de tu empresa (opcional)"
+            class="w-full p-3 rounded-lg border border-[#D2B48C] focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
+          />
+
+          <select
+            class="w-full p-3 rounded-lg border border-[#D2B48C] focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
+          >
+            <option value="">Selecciona el servicio de interés</option>
+            <option>Desarrollo y Arquitectura</option>
+            <option>Automatización y Conectividad</option>
+            <option>Consultoría y Migración</option>
+            <option>Extensión de Equipo</option>
+          </select>
+
+          <textarea
+            rows="4"
+            placeholder="Cuéntanos brevemente qué necesitas..."
+            class="w-full p-3 rounded-lg border border-[#D2B48C] focus:outline-none focus:ring-2 focus:ring-[#6F4E37]"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="bg-[#3B2F2F] text-[#F9EEDC] px-8 py-3 rounded-lg hover:bg-[#5A4234] transition font-semibold shadow-lg"
+          >
+            🚀 Solicitar cotización
+          </button>
+        </form>
+      </div>
+
+      <!-- BENEFICIOS -->
+      <div class="space-y-8 text-center lg:text-left">
+        <h3 class="text-2xl font-bold">¿Por qué contactarnos?</h3>
+        <ul class="space-y-4 text-lg text-[#4A3B35]">
+          <li class="flex items-center gap-3">
+            <lucide-icon name="clock" class="text-[#6F4E37] w-6 h-6"></lucide-icon>
+            Respuestas rápidas y personalizadas
+          </li>
+          <li class="flex items-center gap-3">
+            <lucide-icon name="briefcase" class="text-[#6F4E37] w-6 h-6"></lucide-icon>
+            Asesoría gratuita para nuevos proyectos
+          </li>
+          <li class="flex items-center gap-3">
+            <lucide-icon name="star" class="text-[#6F4E37] w-6 h-6"></lucide-icon>
+            Experiencia con empresas en Ecuador y LATAM
+          </li>
+          <li class="flex items-center gap-3">
+            <lucide-icon name="shield-check" class="text-[#6F4E37] w-6 h-6"></lucide-icon>
+            Confidencialidad y acompañamiento integral
+          </li>
+        </ul>
+
+        <div class="pt-6">
+          <p class="font-medium text-[#3B2F2F]">
+            💬 También puedes escribirnos directamente a:
+          </p>
+          <p class="text-lg">
+            <strong>Email:</strong> <br />
+            <strong>WhatsApp:</strong> +593 99 999 9999
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section
+    class="bg-gradient-to-br from-[#6F4E37] to-[#3B2F2F] py-24 text-center text-[#F9EEDC] px-6"
+  >
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+      La mejor decisión es empezar hoy
+    </h2>
+    <p class="max-w-2xl mx-auto mb-8 text-lg">
+      No esperes a que tu idea se quede en el papel.
+      En Melody convertimos visión en tecnología, y tecnología en resultados.
+    </p>
+    <a
+      href="https://wa.me/593989608925"
+      target="_blank"
+      class="inline-block bg-[#F9EEDC] text-[#3B2F2F] px-8 py-3 rounded-lg hover:bg-[#E8D3B0] font-semibold shadow-md transition"
+    >
+      Contáctanos ahora
+    </a>
+  </section>
+</section>
+
+
+<footer class="bg-[#2E2420] text-white px-8 py-12">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+
+    <!-- Logo + Nombre -->
+    <div class="flex items-center gap-3">
+      <img src="assets/images/logo.png" alt="Melody" class="w-8 h-8">
+      <h3 class="text-lg font-semibold tracking-wide">Melody</h3>
+    </div>
+
+    <!-- Mensaje de propósito -->
+    <p class="text-center md:text-left text-white/70 max-w-md leading-relaxed">
+      Creamos soluciones inteligentes con IA y software a medida.<br>
+      Tecnología con propósito.
+    </p>
+
+    <!-- Redes sociales -->
+    <div class="flex gap-5">
+      <a href="https://www.linkedin.com/company/melody-ai/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="inline-flex items-center justify-center text-white hover:text-amber-400 transition">
+        <lucide-icon name="linkedin" class="w-5 h-5 cursor-pointer"></lucide-icon>
+      </a>
+      <lucide-icon name="mail" class="w-5 h-5 hover:text-amber-400 cursor-pointer transition"></lucide-icon>
+    </div>
+
+  </div>
+
+  <!-- Línea inferior -->
+  <div class="border-t border-white/10 mt-8 pt-4 text-center text-xs text-white/50">
+    © 2025 Melody · Software inteligente para un mundo conectado.
+  </div>
+</footer>

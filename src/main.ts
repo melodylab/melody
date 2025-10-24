@@ -28,6 +28,10 @@ import {
   CpuIcon,
   Target,
   ChartLine,
+  Handshake,
+  MessageCircle,
+  Briefcase,
+  Star,
 } from 'lucide-angular';
 import { provideRouter } from '@angular/router';
 
@@ -62,6 +66,10 @@ bootstrapApplication(AppComponent, {
         CpuIcon,
         Target,
         ChartLine,
+        Handshake,
+        MessageCircle,
+        Briefcase,
+        Star,
       })
     ),
     ...appConfig.providers!, // Mantiene tu configuración base
